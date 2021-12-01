@@ -5,38 +5,34 @@
                 <v-col cols="12" sm="5" md="5">
 	                <div class="banner-detail">
 						<h1 class="banner-title">
-                            <span>Discover the new </span> <br> ecosystem
+                            <span>Meta Eden </span> <br> Decentralize Metaverse
                         </h1>
-						<p class="sub-banner-title">The society world are freedom & fair return</p>
+                        <p class="sub-banner-title">
+                            Real Decentralize Ecosystem
+                            <br>
+                             Next level of Ecosystem Cordination of Business and humanbeing
+                        </p>
+					
                         <div class="paper-hero-area">
-                            <v-btn elevation="2" to='/wallet' class="btn-primary" >White Paper</v-btn>
+                            <v-btn elevation="2" to='/wallet' class="btn-primary paper-btn" >White Paper</v-btn>
+                            <div class="social-media-area">
+                               
+                                <a href="#" title="twitter"><Twitter class="icon-social" /></a>
+                                 <a href="https://discord.gg/SGzhmzd9" title="discord">
+                                <Discord class="icon-social" /></a>
+                            </div>
+                             
                         </div>
                         <div class="total-economy-area">
-                            <h6>TOTAL ECONOMY WEALTH</h6>
                             <div class="total-economy-detail-area">
                                 <div class="total-economy-text-topic">
-                                     Cypto Asset:
+                                     Total economic wealth:
                                 </div>
                                 <div class="total-economy-text-value">
-                                    100,000$
+                                    100,000 usd
                                 </div>
                             </div>
-                            <div class="total-economy-detail-area">
-                                <div class="total-economy-text-topic">
-                                    Real Sector Currency:
-                                </div>
-                                <div class="total-economy-text-value">
-                                    230,000$
-                                </div>
-                            </div>
-                            <div class="total-economy-detail-area">
-                                <div class="total-economy-text-topic">
-                                    Real Sector Asset:
-                                </div>
-                                <div class="total-economy-text-value">
-                                    350,000$
-                                </div>
-                            </div>
+                            
                         </div>   
 					</div>
                 </v-col>
@@ -55,9 +51,11 @@
 
 <script>
 import HeroBanner from "~/assets/images/banner-img.svg?inline";
+import Twitter from "~/assets/images/icons/twitter.svg";
+import Discord from "~/assets/images/icons/icons8-discord.svg";
 
 export default {
- components: { HeroBanner },
+ components: { HeroBanner, Discord,Twitter },
  computed: {
       IsshowMobile () {
         switch (this.$vuetify.breakpoint.name) {
