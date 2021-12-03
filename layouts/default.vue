@@ -3,8 +3,7 @@
  
   	<v-navigation-drawer v-if="drawer" v-model="drawer" :mini-variant="miniVariant" :clipped="clipped"
       fixed
-      app
-    >
+      app>
       <v-list>
         <v-list-item v-for="(item, i) in items" :key="i" :to="item.to"
           router
@@ -16,18 +15,113 @@
             <v-list-item-title v-text="item.title" />
           </v-list-item-content>
         </v-list-item>
-		<v-list-item >
+	    	<v-list-item >
           <v-list-item-content>
-           <v-btn elevation="2" to='/wallet' class="btn-primary" >Join Eden</v-btn>
+           <v-btn elevation="2" to='/signup' class="btn-primary btn-join-eden" >Join Eden</v-btn>
           </v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" class="header-area"  fixed app >
-    
+ 
+    <v-dialog
+      v-model="dialog"
+      fullscreen
+      hide-overlay
+      transition="dialog-bottom-transition"
+    >
+      <template v-slot:activator="{ on, attrs }">
+        <!-- <v-btn color="primary" dark v-bind="attrs" v-on="on" > Open Dialog </v-btn> -->
+         <a  class="hamburger-menu" href="#" title="Menu" v-bind="attrs" v-on="on">
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </a>
+
+      </template>
+      <v-card>
+        <v-toolbar
+          dark
+          color="primary"
+        >
+          <v-btn
+            icon
+            dark
+            @click="dialog = false"
+          >
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
+          <v-toolbar-title>Settings</v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-toolbar-items>
+            <v-btn
+              dark
+              text
+              @click="dialog = false"
+            >
+              Save
+            </v-btn>
+          </v-toolbar-items>
+        </v-toolbar>
+        <v-list
+          three-line
+          subheader
+        >
+          <v-subheader>User Controls</v-subheader>
+          <v-list-item>
+            <v-list-item-content>
+              <v-list-item-title>Content filtering</v-list-item-title>
+              <v-list-item-subtitle>Set the content filtering level to restrict apps that can be downloaded</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-content>
+              <v-list-item-title>Password</v-list-item-title>
+              <v-list-item-subtitle>Require password for purchase or use password to restrict purchase</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+        <v-divider></v-divider>
+        <v-list
+          three-line
+          subheader
+        >
+          <v-subheader>General</v-subheader>
+          <v-list-item>
+            <v-list-item-action>
+              <v-checkbox v-model="notifications"></v-checkbox>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Notifications</v-list-item-title>
+              <v-list-item-subtitle>Notify me about updates to apps or games that I downloaded</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-action>
+              <v-checkbox v-model="sound"></v-checkbox>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Sound</v-list-item-title>
+              <v-list-item-subtitle>Auto-update apps at any time. Data charges may apply</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-action>
+              <v-checkbox v-model="widgets"></v-checkbox>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Auto-add widgets</v-list-item-title>
+              <v-list-item-subtitle>Automatically add home screen widgets</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-card>
+    </v-dialog>
+
+
    <EdenLogo class="logo" />
     <v-spacer v-if="!IsshowOnMobile" />
-    <div class="menu-area" v-if="!IsshowOnMobile" id="menu-section-area">
+    <!-- <div class="menu-area" v-if="!IsshowOnMobile" id="menu-section-area">
         <ul class="nav navbar-nav">
             <li class="item">
                 <a href="#hero-section" class="page-scroll nav-link" data-scroll>Home</a>
@@ -48,11 +142,11 @@
 				<a href="#faq-section" class="page-scroll nav-link" data-scroll>Faqs</a>
 			</li>
 			<li class="item">
-              	<v-btn elevation="2" to='/wallet' class="btn-primary" >Join Eden</v-btn>
+              	<v-btn elevation="2" to='/wallet' class="btn-primary  btn-join-eden" >Join Eden</v-btn>
 			</li>
 		</ul>
-     </div>
-    <v-app-bar-nav-icon v-if="IsshowOnMobile" @click.stop="drawer = !drawer" />
+     </div> -->
+    
     </v-app-bar>
   
     <v-main id="hero-section">
@@ -68,11 +162,15 @@
   </v-app>
 </template>
 <script>
-import EdenLogo from "~/assets/images/logo_fit_light.svg?inline";
+import EdenLogo from "~/assets/images/logo_fit_dark.svg?inline";
 export default {
   components: { EdenLogo },
   data () {
     return {
+       dialog: false,
+        notifications: false,
+        sound: true,
+        widgets: false,
       isopendrawer:false,
       clipped: false,
       drawer: false,

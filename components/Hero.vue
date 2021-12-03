@@ -1,6 +1,6 @@
 <template>
 	<section id="hero-part" class="hero-area">
-	    <div class="container">
+	    <div class="container left-hero-area">
             <v-row >
                 <v-col cols="12" sm="5" md="5">
 	                <div class="banner-detail">
@@ -14,7 +14,7 @@
                         </p>
 					
                         <div class="paper-hero-area">
-                            <v-btn elevation="2" to='/wallet' class="btn-primary paper-btn" >White Paper</v-btn>
+                            <v-btn to='/wallet' class="btn-primary paper-btn" >White Paper</v-btn>
                             <div class="social-media-area">
                                
                                 <a href="#" title="twitter"><Twitter class="icon-social" /></a>
@@ -23,13 +23,31 @@
                             </div>
                              
                         </div>
-                        <div class="total-economy-area">
+                        <div class="total-economy-area" :class="classToggleWealth">
                             <div class="total-economy-detail-area">
-                                <div class="total-economy-text-topic">
-                                     Total economic wealth:
+                                <div class="right-area">
+                                     <a class="btn-toggle-total-economy" v-on:click="totalWealthClick()" >
+                                        <EdenLogo style="width:20px;" />
+                                        <span>Economic Wealth</span>
+                                        <v-icon color="#00fdff">
+                                            mdi-chevron-right
+                                        </v-icon>
+                                    </a>
                                 </div>
-                                <div class="total-economy-text-value">
-                                    100,000 usd
+                                <div class="left-area">
+                                    <div class="wrapper">
+                                        <div class="economic-info-shadow">Economic info</div>
+                                    </div>
+                                    <div class="wealth-detail">
+                                        <div class="wealth-detail-left-area">
+                                            <div class="total-economy-text-topic">Total economic wealth</div>
+                                            <h6 class="total-economy-text-value">  0 $ </h6>
+                                        </div>
+                                        <div class="wealth-detail-right-area">
+                                             <EdenLogo style="width:100px;" />
+                                        </div>
+                                    </div>
+                                  
                                 </div>
                             </div>
                             
@@ -53,9 +71,16 @@
 import HeroBanner from "~/assets/images/banner-img.svg?inline";
 import Twitter from "~/assets/images/icons/twitter.svg";
 import Discord from "~/assets/images/icons/icons8-discord.svg";
+import EdenLogo from "~/assets/images/logo_fit_dark.svg?inline";
 
 export default {
- components: { HeroBanner, Discord,Twitter },
+ components: { HeroBanner, Discord,Twitter,EdenLogo },
+ data () {
+    return {
+       classToggleWealth: "total-economy-close",
+       isWealthOpen:false
+    }
+  },
  computed: {
       IsshowMobile () {
         switch (this.$vuetify.breakpoint.name) {
@@ -66,7 +91,21 @@ export default {
           case 'xl': return false
         }
       },
+      isWealthOpen(){
+        
+      }
     },
+    methods: {
+        totalWealthClick: function (message) {
+            var self = this;
+            self.isWealthOpen =!self.isWealthOpen
+            if(self.isWealthOpen == true) {
+                    self.classToggleWealth = "total-economy-open"
+                }else{
+                    self.classToggleWealth = "total-economy-close"
+                }
+        }
+  }
 }
 </script>
 

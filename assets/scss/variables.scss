@@ -7,3 +7,23 @@ $screen-desktop-wide: "only screen and (min-width: #{$desktop-breakpoints})";
 
 $ipad-breakpoints: 1024px;
 $screen-ipad-wide: "only screen and (max-width: #{$ipad-breakpoints})";
+
+$color-bg: rgb(5, 18, 22);
+$color-neon: #00fdff;
+
+$background-color1:rgb(19,94,136);
+$background-gradient-color1:linear-gradient(90deg, rgba(19,94,136,1) 0%, rgba(41,177,228,1) 28%, rgba(29,168,221,1) 59%, rgba(8,122,145,1) 100%);
+
+
+$background-color2: rgb(182,177,171);
+$background-gradient-color2: linear-gradient(90deg, rgba(182,177,171,0.01) 0%, rgba(242,234,203,1) 35%, rgba(242,233,210,1) 56%, rgba(162,156,148,0.01) 100%);
+
+
+$background-color3: rgb(182,177,171);
+$background-gradient-color3: radial-gradient(circle, rgba(182,177,171,0.01) 0%, rgba(241,238,229,1) 35%, rgba(236,233,224,1) 56%, rgba(221,218,215,0.01) 100%);
+
+$background-color4: rgb(19,94,136);
+$background-gradient-color4:linear-gradient(90deg, rgba(19,94,136,1) 0%, rgba(41,177,228,1) 23%, rgba(124,210,244,0.1) 64%, rgba(8,122,145,0.8) 93%);
+
+$background-color5: rgb(19,94,136);
+$background-gradient-color5: linear-gradient(90deg, rgba(19,94,136,1) 0%, rgba(41,177,228,1) 23%, rgba(124,210,224,0.1) 57%, rgba(124,210,224,0.1) 83%, rgba(8,122,145,0.8) 93%);
