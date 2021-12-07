@@ -1,6 +1,6 @@
 <template>
 	<section id="hero-part" class="hero-area">
-	    <div class="container left-hero-area">
+	    <div class="left-hero-area">
             <v-row >
                 <v-col cols="12" sm="5" md="5">
 	                <div class="banner-detail">
@@ -90,9 +90,6 @@ export default {
           case 'lg': return false
           case 'xl': return false
         }
-      },
-      isWealthOpen(){
-        
       }
     },
     methods: {

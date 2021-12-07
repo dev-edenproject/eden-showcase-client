@@ -24,14 +24,54 @@
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" class="header-area"  fixed app >
  
-    <v-dialog
+  <div class="menu" :class="classTogglemenu" v-on:click="menuClick()">
+    
+    <span class="menu-circle"></span>
+      <a href="#" class="menu-link">
+        <span class="menu-icon">
+          <span class="menu-line menu-line-1"></span>
+          <span class="menu-line menu-line-2"></span>
+          <span class="menu-line menu-line-3"></span>
+        </span>
+      </a>
+  </div>
+
+  <div class="menu-overlay" :class="classTogglemenu" v-on:click="menuClick()">
+   <div id="circle-orbit-container">
+
+  <!-- Circles closest to the central point -->
+  <div id="inner-orbit">
+    <div class="inner-orbit-cirlces"></div>
+  </div>
+<div class="line-inner-orbit"></div>
+  <!-- Circles second closest to the central point -->
+  <div id="middle-orbit">
+    <div class="middle-orbit-cirlces"></div>
+  </div>
+<div class="line-middle-orbit"></div>
+<div class="line-middle2-orbit"></div>
+<div class="line-outer-orbit"></div>
+  <!-- Circles furthest away to the central point -->
+  <div id="outer-orbit">
+    <div class="outer-orbit-cirlces"></div>
+  </div>
+<div id="outer4-orbit">
+    <div class="outer4-orbit-cirlces"></div>
+  </div>
+</div>
+    <a href="#about-section" class="menu-about" >About</a>
+    <a href="#features-section" class="menu-features">Features</a>
+    <a href="#distribution-section" class="menu-distribution">Distribution</a>
+    <a href="#roadmap-section" class="menu-roadmap">Roadmap</a>
+    <a href="#faq-section" class="menu-join-eden">Join eden</a>
+  </div>
+    <!-- <v-dialog
       v-model="dialog"
       fullscreen
       hide-overlay
       transition="dialog-bottom-transition"
     >
       <template v-slot:activator="{ on, attrs }">
-        <!-- <v-btn color="primary" dark v-bind="attrs" v-on="on" > Open Dialog </v-btn> -->
          <a  class="hamburger-menu" href="#" title="Menu" v-bind="attrs" v-on="on">
           <span class="line line-1"></span>
           <span class="line line-2"></span>
@@ -116,7 +156,7 @@
           </v-list-item>
         </v-list>
       </v-card>
-    </v-dialog>
+    </v-dialog> -->
 
 
    <EdenLogo class="logo" />
@@ -167,10 +207,12 @@ export default {
   components: { EdenLogo },
   data () {
     return {
-       dialog: false,
-        notifications: false,
-        sound: true,
-        widgets: false,
+      dialog: false,
+      notifications: false,
+      sound: true,
+      widgets: false,
+      classTogglemenu: "close",
+      isopenMenu:false,
       isopendrawer:false,
       clipped: false,
       drawer: false,
@@ -219,5 +261,16 @@ export default {
         }
       },
     },
+    methods: {
+        menuClick: function (message) {
+            var self = this;
+            self.isopenMenu =!self.isopenMenu
+            if(self.isopenMenu == true) {
+                    self.classTogglemenu = "open"
+                }else{
+                    self.classTogglemenu = "close"
+                }
+        }
+  }
 }
 </script>
