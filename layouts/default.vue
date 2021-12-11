@@ -22,7 +22,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" class="header-area"  fixed app >
+    <v-app-bar :clipped-left="clipped" ref="main_nav" class="header-area"  fixed app >
  
   <div class="menu" :class="classTogglemenu" v-on:click="menuClick()">
     
@@ -59,11 +59,33 @@
     <div class="outer4-orbit-cirlces"></div>
   </div>
 </div>
-    <a href="#about-section" class="menu-about" >About</a>
-    <a href="#features-section" class="menu-features">Features</a>
-    <a href="#distribution-section" class="menu-distribution">Distribution</a>
-    <a href="#roadmap-section" class="menu-roadmap">Roadmap</a>
-    <a href="#faq-section" class="menu-join-eden">Join eden</a>
+    <a href="#about-section" class="menu-about" >
+      <div class="inner">
+        About
+        </div> 
+     </a>
+    <a href="#features-section" class="menu-features">
+      <div class="inner">
+        Features
+      </div>
+      </a>
+    <a href="#distribution-section" class="menu-distribution">
+      <div class="inner">
+        Distribution
+      </div>
+
+    </a>
+    <a href="#roadmap-section" class="menu-roadmap">
+      <div class="inner">
+        Roadmap
+      </div>
+
+    </a>
+    <a href="#faq-section" class="menu-join-eden">
+      <div class="inner">
+        Join eden
+      </div>
+    </a>
   </div>
     <!-- <v-dialog
       v-model="dialog"
@@ -189,7 +211,7 @@
     
     </v-app-bar>
   
-    <v-main id="hero-section">
+    <v-main id="hero-section" style="padding:0px;">
       <Nuxt />
     </v-main>
  
@@ -207,6 +229,8 @@ export default {
   components: { EdenLogo },
   data () {
     return {
+      scrollPosition: null,
+      isremoveTheme: false,
       dialog: false,
       notifications: false,
       sound: true,
@@ -261,7 +285,18 @@ export default {
         }
       },
     },
+    mounted() {
+     window.addEventListener('scroll', this.updateScroll);
+      //this.$refs.main_nav.classList.remove('theme--light')
+
+     //main_nav
+    },
+
     methods: {
+       updateScroll() {
+       this.scrollPosition = window.scrollY
+       console.log(this.scrollPosition)
+    },
         menuClick: function (message) {
             var self = this;
             self.isopenMenu =!self.isopenMenu

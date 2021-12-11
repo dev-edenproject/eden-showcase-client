@@ -165,7 +165,7 @@
 				</v-col>
 			</v-row>
         <v-timeline>
-    <v-timeline-item v-for="n in roadmap" :key="n.name" color="#00b388" large >
+    <v-timeline-item v-for="n in roadmap" :key="n.name" color="rgb(19,94,136)" large >
       <template v-slot:opposite>
         <div :class="n.class">{{n.name}}</div>
       </template>
@@ -244,6 +244,7 @@ export default {
     },
   data () {
     return {
+	
     isopendrawer:false,
     clipped: false,
     drawer: false,
@@ -319,7 +320,7 @@ export default {
 	  faqSelected:''
     }
   },
-  computed: {
+computed: {
       IsshowOnMobile () {
         switch (this.$vuetify.breakpoint.name) {
           case 'xs': return true
@@ -329,7 +330,8 @@ export default {
           case 'xl': return false
         }
       },
-    },
+},
+
 }
 </script>
 

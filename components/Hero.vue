@@ -1,5 +1,7 @@
 <template>
 	<section id="hero-part" class="hero-area">
+        
+         
 	    <div class="left-hero-area">
             <v-row >
                 <v-col cols="12" sm="5" md="5">
@@ -58,7 +60,10 @@
                 <v-col cols="12" sm="12" md="6" >
                     <div class="banner-main-img" v-if="!IsshowMobile">
 						<div class="front-bg fadeInRight">
-                            <HeroBanner class="hero-banner bounce-animation"/>
+                        <video autoplay muted loop id="myVideo">
+                            <source src="~/assets/video/video-bg.mp4" type="video/mp4">
+                        </video>
+                            <!-- <HeroBanner class="hero-banner bounce-animation"/> -->
 						</div>
 					</div>
                 </v-col>
@@ -73,8 +78,9 @@ import Twitter from "~/assets/images/icons/twitter.svg";
 import Discord from "~/assets/images/icons/icons8-discord.svg";
 import EdenLogo from "~/assets/images/logo_fit_dark.svg?inline";
 
+
 export default {
- components: { HeroBanner, Discord,Twitter,EdenLogo },
+ components: { HeroBanner, Discord,Twitter,EdenLogo  },
  data () {
     return {
        classToggleWealth: "total-economy-close",
@@ -95,7 +101,7 @@ export default {
     methods: {
         totalWealthClick: function (message) {
             var self = this;
-            self.isWealthOpen =!self.isWealthOpen
+            self.isWealthOpen =! self.isWealthOpen
             if(self.isWealthOpen == true) {
                     self.classToggleWealth = "total-economy-open"
                 }else{

@@ -20,12 +20,14 @@ body{
 .v-toolbar__content{
     height: 100px !important;
 }
-
+.header_nav_color {
+  background-color:rgb(19,94,136) !important;
+}
 
 .header-area{
     background: $background-color5;
     background: $background-gradient-color5;
-    background-color: transparent !important;
+    background: transparent !important;
     box-shadow:none !important;
     height: 100px !important;
     display: flex;
@@ -318,40 +320,168 @@ body{
         .eden-logo-menu{
           visibility:visible;
         }
+
+
+        // .button {
+        //   text-transform:uppercase;
+        //   background-color:transparent;
+        //   border-radius:40px;
+        //   padding:4px;
+        //   border:1px solid rgba(184,70,71,1);
+        //   margin-top:20px;
+        //   .inner{
+        //     background-color:rgba(184,70,71,1);
+        //     padding:15px 30px;
+        //      border-radius:40px;
+            
+            
+        //   }
+          
+        // }
+
         .menu-about{
          
-          font-size: 32px;
-          color:#ffff;
+          width: 100px;
+          height: 100px;
+          background: transparent;
+          border-radius: 57% 43% 37% 63% / 45% 52% 48% 52%;
+          box-shadow: inset 10px 10px 10px rgba(0,0,0,0.05), 15px 25px 10px rgba(0,0,0,0.1), 15px 20px 20px rgba(0,0,0,0.05), inset -10px -10px 15px rgba(255,255,255,0.9);
+         
           margin:  5%% 1% 0;
           position: absolute;
           left: 18vh;
           top: 35vh;
           -webkit-animation: 1s ease 0s normal forwards 1 fadein;
           animation: 1s ease 0s normal forwards 1 fadein;
+
+          .inner{
+            position: absolute;
+            left: 25px;
+            top: 37px;
+            font-size: 20px;
+          }
+
+          &::before {
+            content: '';
+            position: absolute;
+            left: 25px;
+            top: 35px;
+            width: 20px;
+            height: 20px;
+            border-radius: 42% 58% 37% 63% / 40% 43% 57% 60% ;
+            background: #FFF
+          }
+           &::after {
+            content: '';
+            position: absolute;
+            left: 60px;
+            top: 25px;
+            width: 10px;
+            height: 10px;
+            border-radius: 42% 58% 37% 63% / 40% 43% 57% 60% ;
+            background: #FFF;
+           
+          }
         }
         .menu-features{
-          font-size: 32px;
-          color:#ffff;
+          
+          width: 120px;
+          height: 120px;
+          background: transparent;
+          box-shadow: inset 10px 10px 10px rgba(0,0,0,0.05), 15px 25px 10px rgba(0,0,0,0.1), 15px 20px 20px rgba(0,0,0,0.05), inset -10px -10px 15px rgba(255,255,255,0.9);
+          border-radius: 45% 55% 64% 36% / 34% 33% 67% 66% ;
+
+
           margin:  5%% 1% 0;
           position: absolute;
           left: 80vh;
-          top: 10vh;
+          top: 4vh;
           -webkit-animation: 3s ease 0s normal forwards 1 fadein;
           animation: 3s ease 0s normal forwards 1 fadein;
+
+          .inner{
+            position: absolute;
+            left: 25px;
+            top: 40px;
+            font-size: 20px;
+          }
+
+          &::before {
+            content: '';
+            position: absolute;
+            left: 25px;
+            top: 35px;
+            width: 20px;
+            height: 20px;
+            border-radius: 42% 58% 37% 63% / 40% 43% 57% 60% ;
+            background: #FFF
+          }
+           &::after {
+            content: '';
+            position: absolute;
+            left: 60px;
+            top: 25px;
+            width: 10px;
+            height: 10px;
+            border-radius: 42% 58% 37% 63% / 40% 43% 57% 60% ;
+            background: #FFF;
+           
+          }
         }
         .menu-distribution{
-          font-size: 32px;
-          color:#ffff;
+          width: 140px;
+          height: 140px;
+          background: transparent;
+          box-shadow: inset 10px 10px 10px rgba(0,0,0,0.05), 15px 25px 10px rgba(0,0,0,0.1), 15px 20px 20px rgba(0,0,0,0.05), inset -10px -10px 15px rgba(255,255,255,0.9);
+          border-radius: 45% 55% 64% 36% / 34% 33% 67% 66% ;
+
+
           margin:  5%% 1% 0;
           position: absolute;
           left: 42vh;
           top: 70vh;
           -webkit-animation: 5s ease 0s normal forwards 1 fadein;
           animation: 5s ease 0s normal forwards 1 fadein;
+
+          .inner{
+            position: absolute;
+            left: 20px;
+            top: 55px;
+            font-size: 20px;
+          }
+
+          &::before {
+            content: '';
+            position: absolute;
+            left: 70%;
+            top: 35px;
+            width: 20px;
+            height: 20px;
+            border-radius: 42% 58% 37% 63% / 40% 43% 57% 60% ;
+            background: #FFF
+          }
+           &::after {
+            content: '';
+            position: absolute;
+            left: 65px;
+            top: 25px;
+            width: 10px;
+            height: 10px;
+            border-radius: 42% 58% 37% 63% / 40% 43% 57% 60% ;
+            background: #FFF;
+           
+          }
         }
         .menu-roadmap{
-          font-size: 32px;
-          color:#ffff;
+        
+          width: 140px;
+          height: 140px;
+          background: transparent;
+          box-shadow: inset 10px 10px 10px rgba(0,0,0,0.05), 15px 25px 10px rgba(0,0,0,0.1), 15px 20px 20px rgba(0,0,0,0.05), inset -10px -10px 15px rgba(255,255,255,0.9);
+          border-radius: 45% 55% 64% 36% / 34% 33% 67% 66% ;
+
+
+
           margin:  5%% 1% 0;
           position: absolute;
           left: 115vh;
@@ -359,8 +489,50 @@ body{
           -webkit-animation: 8s ease 0s normal forwards 1 fadein;
           animation: 8s ease 0s normal forwards 1 fadein;
         
+
+          .inner{
+            position: absolute;
+            left: 25px;
+            top: 45px;
+            font-size: 20px;
+          }
+
+            &::before {
+              content: '';
+              position: absolute;
+              left: 25px;
+              top: 35px;
+              width: 20px;
+              height: 20px;
+              border-radius: 42% 58% 37% 63% / 40% 43% 57% 60% ;
+              background: #FFF
+            }
+            &::after {
+              content: '';
+              position: absolute;
+              left: 60px;
+              top: 25px;
+              width: 10px;
+              height: 10px;
+              border-radius: 42% 58% 37% 63% / 40% 43% 57% 60% ;
+              background: #FFF;
+            
+            }
+
         }
+
+
+        
+
         .menu-join-eden{
+
+          text-transform:uppercase;
+          background-color:transparent;
+          border-radius:40px;
+          padding:4px;
+          border:1px solid #00fdff;
+          margin-top:20px;
+
           font-size: 32px;
           color:#ffff;
           margin:  5%% 1% 0;
@@ -369,6 +541,14 @@ body{
           top: 50vh;
           -webkit-animation: 10s ease 0s normal forwards 1 fadein;
           animation: 10s ease 0s normal forwards 1 fadein;
+
+          .inner{
+            background: linear-gradient(9deg, rgba(0,255,255,0.27) -45.61%, rgba(82,0,255,0.18) 102.05%, rgba(82,0,255,0.18) 214.49%),rgb(19,94,136);
+            padding:15px 30px;
+             border-radius:40px;
+            
+            
+          }
         }
         .line-inner-orbit {
         

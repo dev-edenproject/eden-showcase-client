@@ -8,20 +8,18 @@
     padding-top:0px;
     padding-left:7%;
     padding-right:7%;
-    height: 95vh;
-  
-    background: $background-color5;
-    background: $background-gradient-color5;
+    height: 100vh;
+    position: relative;
+    background: $background-color6;
+    background: $background-gradient-color6;
    
-    margin-top: 56.1px;
+  //  margin-top: 56.1px;
 
     .banner-title {
 
         background: rgb(255,254,252);
-        background: linear-gradient(
-            90deg, rgba(255, 254, 252, 0.01) 0%, #f9f9f9 0%, #0a82a2 94%);
+        background: linear-gradient(  90deg, rgba(255, 254, 252, 0.01) 0%, #f9f9f9 0%, #0a82a2 94%);
 
-     
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
 
@@ -184,21 +182,56 @@
        
     }
 
-.hero-banner{
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    transform-origin: bottom;
+    .hero-banner{
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        transform-origin: bottom;
 
-  
+    
 }
+    
+#myVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0.2;
+}
+  
+  /* Add some content at the bottom of the video/page */
+  .content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  /* Style the button used to pause/play the video */
+  #myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  #myBtn:hover {
+    background: #ddd;
+    color: black;
+  }
 }
 
 .about-section-area{
-    background: #00b388;
+    background: #ffff;
     overflow: hidden;
     padding-top: 100px;
     padding-bottom: 100px;
-
+   
     .aboutus-detail{
         padding-top: 40px;
         .main_title{
@@ -206,17 +239,17 @@
             line-height: 40px;
             margin-bottom: 10px;
             letter-spacing: 0px;
-            color:#ffff;
+            color:rgb(3, 3, 3);
         }
         .heading-part  {
             span{
-                color: #64FFDA;
+                color:  rgb(3, 3, 3);
                 font-size: 20px;
             }
         }
         p {
             margin-top: 10px;
-            color:#ffff;
+            color: rgb(3, 3, 3);
         }
 
         ul{
@@ -229,7 +262,7 @@
                 position: relative;
                 padding-left: 49px;
                 line-height: 39px;
-                color:#fff;
+                color: rgb(3, 3, 3);
 
                 &::before{
                     background-image: url(~assets/images/list-icon.png);
@@ -249,7 +282,8 @@
 }
 
 .features-section-area{
-    background-color: #E0F2F1;
+    background: $background-color-dark;
+    background: $background-gradient-color-dark;
     padding-top: 100px;
     padding-bottom: 100px;
     .main_title{
@@ -257,11 +291,11 @@
         line-height: 40px;
         margin-bottom: 10px;
         letter-spacing: 0px;
-        color:#00b388;
+        color:#ffff;
     }
     .heading-part  {
         span{
-            color: #1DE9B6;
+            color: #ffff;
             font-size: 20px;
         }
     }
@@ -271,7 +305,7 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            background: #00b388;
+            background: linear-gradient(9deg, rgba(0,255,255,0.27) -45.61%, rgba(82,0,255,0.18) 102.05%, rgba(82,0,255,0.18) 214.49%),rgb(19,94,136);
             padding: 25px;
             border-radius: 8px;
             border-width: 1px;
@@ -284,7 +318,8 @@
 }
 
 .distribution-section-area{
-    background: #00b388;
+    background: $background-color-dark;
+    background: $background-gradient-color-dark;
     overflow: hidden;
     padding-top: 100px;
     padding-bottom: 100px;
@@ -298,7 +333,7 @@
     }
     .heading-part  {
         span{
-            color: #64FFDA;
+            color: #ffff;
             font-size: 20px;
         }
     }
@@ -351,7 +386,7 @@
 }
 
 .roadmap-section-area{
-    background-color: #E0F2F1;
+    background-color: #ffff;
     padding-top: 100px;
     padding-bottom: 100px;
     .main_title{
@@ -359,11 +394,11 @@
         line-height: 40px;
         margin-bottom: 10px;
         letter-spacing: 0px;
-        color:#00b388;
+        color:rgb(8, 98, 131);
     }
     .heading-part  {
         span{
-            color: #1DE9B6;
+            color: rgb(8, 98, 131);
             font-size: 20px;
         }
     }
@@ -374,7 +409,7 @@
         
         width: 100%;
         padding: 15px !important;
-        background:#00b388;
+        background: linear-gradient(9deg, rgba(0,255,255,0.27) -45.61%, rgba(82,0,255,0.18) 102.05%, rgba(82,0,255,0.18) 214.49%),rgb(19,94,136);
         border-radius: 15px;
         margin-bottom: 15px !important;
         position: relative;
@@ -383,7 +418,8 @@
 }
 
 .faq-section-area{
-    background: #00b388;
+    background: $background-color-dark;
+    background: $background-gradient-color-dark;
     overflow: hidden;
     padding-top: 100px;
     padding-bottom: 100px;
@@ -402,17 +438,17 @@
         display: none;
     }
     .v-tabs-bar{
-        background-color:#00b388 !important ;
+        background:linear-gradient(9deg, rgba(0,255,255,0.27) -45.61%, rgba(82,0,255,0.18) 102.05%, rgba(82,0,255,0.18) 214.49%),rgb(19,94,136) !important ;
         height: 68px;
     }
     .v-tab--active{
         border: none !important;
         background-color: #E0F2F1 !important;
-        color: #00b388 !important;
+        color: rgb(8, 98, 131) !important;
     }
     .v-tab{
         color: #fff;
-        border: 2px solid #00BFA5;
+        border: 0px solid #ffff;
         background-color: transparent;
         display: block;
         padding: 15px 25px;
@@ -431,14 +467,15 @@
     }
   
     .v-expansion-panel{
-        background-color:#009688 !important;
+        background:linear-gradient(9deg, rgba(0,255,255,0.27) -45.61%, rgba(82,0,255,0.18) 102.05%, rgba(82,0,255,0.18) 214.49%),rgb(19,94,136) !important;
         color:#fff !important;
         padding: 5px;
-        margin-bottom: 10px;
+      
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         -o-border-radius: 5px;
         border-radius: 5px;
+        border: 1px solid #ffff;
 
         &::before{
             box-shadow: none;
@@ -454,15 +491,18 @@
         color:#B2DFDB;
     }
     .v-tabs-items {
-        background-color: #00b388; 
+        background:linear-gradient(9deg, rgba(0,255,255,0.27) -45.61%, rgba(82,0,255,0.18) 102.05%, rgba(82,0,255,0.18) 214.49%),rgb(19,94,136) ;
+    }
+    .v-expansion-panel--active:not(:first-child), .v-expansion-panel--active + .v-expansion-panel {
+     margin-top: 0px !important; 
     }
 }
+
 
 @media #{$screen-desktop-wide} {
   
     .hero-area{
         padding-top:100px;
-        margin-top: 36px;
     }
     .banner-detail{
         margin-top: 80px;
